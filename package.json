@@ -1,37 +1,32 @@
 {
   "name": "transaction_api",
   "version": "1.0.0",
-  "description": "A Secured API built for funds transfer",
+  "description": "Transaction API",
   "main": "index.js",
   "scripts": {
-    "start:dev": "set DEBUG=App & nodemon --exec babel-node index.js",
-    "start": "node lib/index.js",
-    "build": "npx babel src -d lib",
-    "test": "cross-env NODE_ENV=test nyc --require @babel/register mocha test/**.test.js --timeout 20000 --exit",
-    "test:watch": "jest --watch --coverage --colors",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codexempire/transaction_api.git"
   },
-  "author": "Princewill Michael",
-  "license": "MIT",
+  "author": "PRINCEWILL MICHAEL",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/codexempire/transaction_api/issues"
   },
   "homepage": "https://github.com/codexempire/transaction_api#readme",
   "dependencies": {
-    "bcrypt": "^3.0.6",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^7.12.1",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.2",
-    "sequelize-cli": "^5.5.1"
+    "mongoose": "^5.7.12",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
