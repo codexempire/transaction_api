@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 startup(app);
-// app.use('/api', routes);
+app.use('/api', routes);
 app.use('/', (req, res) => res.status(200).json({ message: 'Welcome to Trans' }));
 
 const port = process.env.PORT || 4040;
