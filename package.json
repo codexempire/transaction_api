@@ -22,21 +22,23 @@
   },
   "homepage": "https://github.com/codexempire/transaction_api#readme",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.8",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
-    "joi": "^14.3.1",
+    "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^7.12.1",
+    "mongoose": "^5.12.11",
+    "pg": "^7.18.2",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.2",
+    "sequelize": "^5.22.4",
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/node": "^7.7.0",
-    "@babel/preset-env": "^7.7.1"
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "nodemon": "^2.0.7"
   }
 }
