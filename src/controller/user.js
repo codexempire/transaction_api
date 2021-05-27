@@ -49,8 +49,6 @@ export const userSignIn = async (req, res) => {
 
         registeredUser = registeredUser.toJSON();
 
-        console.log("registered Uesr >> ", registeredUser);
-
         return res.status(200).json({
             data: { user: registeredUser, token: signToken(registeredUser) }
         });
