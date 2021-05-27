@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { config } from 'dotenv';
 
-// import routes from './src/routes';
+import routes from './src/routes';
 import startup from './startup';
 
 config();

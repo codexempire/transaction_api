@@ -16,15 +16,15 @@ export const userSignUp = async (req, res) => {
         if(emailExists)
             return res.status(409).json({ error: "Email already exists" });
             
-        const user = await UserRepository.create({email, password});
+        let user = await UserRepository.create({email, password});
 
-        user.toJSON();
+        user = user.toJSON();
 
         return res.status(201).json({
             data: {user, token: signToken(user)}
         });
     } catch (error) {
-        throw new Error(error.message);
+        return res.status(500).json({ error: error.message });
     }
 }
 
@@ -36,8 +36,8 @@ export const userSignUp = async (req, res) => {
  */
 export const userSignIn = async (req, res) => {
     try {
-        const {email} = req.body;
-        const registeredUser = await UserRepository.findOne({email});
+        const {email, password} = req.body;
+        let registeredUser = await UserRepository.findOne({email});
 
         if(!registeredUser)
             return res.status(404).json({ error: 'Invalid login credentials' });
@@ -47,12 +47,14 @@ export const userSignIn = async (req, res) => {
         if(!validPassword)
             return res.status(422).json({ error: 'Invalid login credentials' });
 
-        registeredUser.toJSON();
+        registeredUser = registeredUser.toJSON();
+
+        console.log("registered Uesr >> ", registeredUser);
 
         return res.status(200).json({
             data: { user: registeredUser, token: signToken(registeredUser) }
         });
     } catch (error) {
-        throw new Error(error.message);
+        return res.status(500).json({ error: error.message });
     }
 }
